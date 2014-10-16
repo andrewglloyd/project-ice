@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: 'Ostrich_Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ostrich_Sans'), url('../fonts/Ostrich_Sans_Inline-regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Antonio-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Antonio-Regular'), url('../fonts/Antonio-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Reswysokr';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Reswysokr'), url('../fonts/Reswysokr.otf') format('opentype');
+}
+
+h1 {
+  font-family: 'Reswysokr', serif;
+  font-size: 22px;
+}
+
+h2 {
+  font-family: 'Reswysokr', serif;
+  font-size: 18px;
+}
+
+h3 {
+  font-family: 'Reswysokr', serif;
+  font-size: 16px;
+  font-weight: 1000;
+}
+
+h4 {
+  font-family: 'Reswysokr', serif;
+  font-size: 14px;
+  font-weight: 1000;
+}
+
+a {
+  font-family: 'Reswysokr', serif;
+  font-size: 12px;
+  font-weight: 1000;
+}

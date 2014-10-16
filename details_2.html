@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css">
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+<link rel="stylesheet" href="css/spinner.css" />
+<link rel="stylesheet" href="css/font.css" />
+<link rel="stylesheet" href="css/button.css" />
+
+<script>
+var x = document.getElementById("location");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+
+</head>
+
+<body>
+
+<div style="text-align: center;">
+<img src="images/app_logo_3.png" style="height: 26;" alt="">
+<img src="images/event_logo_1.png" style="margin-top: 20px; height: 64;" alt="">
+<h2>Emergency Contact:</h2>
+<h4>Contact Name<h4>
+<input type="text" class="myInputText" name="input1" id="input1" />
+<h4>Contact Number<h4>
+<input type="text" class="myInputText" name="input2" id="input2" />
+
+<a href="details_1.html" class="myLink">Mistake? Click here to go back.</a>
+<div style='width: 100%; position: absolute; bottom: 0; align: center;'>
+<a href="submit.html" class="myButton" style="position: relative; align: center;">Submit Information</a>
+</div>
+
+</div>
+
+
+</body>
+</html>

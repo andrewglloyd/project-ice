@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.1.0.custom.css?" />
+<link rel="stylesheet" href="css/jquery.mobile.theme.overrides.css" />
+<link rel="stylesheet" href="css/spinner.css" />
+<link rel="stylesheet" href="css/font.css" />
+<link rel="stylesheet" href="css/button.css" />
+</head>
+
+<body onload="loadXMLDoc()">
+
+<div style="text-align: center;">
+<img src="images/app_logo_3.png" style="height: 26;" alt="">
+<img src="images/event_logo_1.png" style="margin-top: 20px; height: 64;" alt="">
+<h2>Thank you for submitting your registration details. These have been transmitted sucessfully.</h2>
+<div id='referenceno'>Ref: 5429344</div>
+<div style='width: 100%; position: absolute; bottom: 0; align: center;'>
+<a href="index.html" class="myButton" style="position: relative; align: center;">Finish</a>
+</div>
+</div>
+
+</body>
+
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("referenceno").innerHTML="<h2>Ref: " + xmlhttp.responseText + "</h2>";
+    }
+  }
+xmlhttp.open("GET","reference.txt",true);
+xmlhttp.send();
+}
+
+window.onload = loadXMLDoc;
+</script>
+
+
+</html>
