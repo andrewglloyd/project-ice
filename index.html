@@ -3,72 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css">
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-
-<link rel="stylesheet" href="css/spinner.css" />
 <link rel="stylesheet" href="css/font.css" />
-<link rel="stylesheet" href="css/button.css" />
-
 </head>
-
 <body class='noselect'>
-
-
 <div style="text-align: center;">
 <img src="images/app_logo_2.png" style="margin-top: 100px; height: 128;" alt="">
-
-
-<h3 style='margin-top: 100px'>
-CHECKING FOR EVENTS IN YOUR AREA
-</h3>
-<p id="demo"></p>
-</div>
-
-
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-</div>
-
 </body>
 </html>
-
 <script>
-var x = document.getElementById("demo");
-var deviceid="";
-
-function makeid()
-{    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < 16; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-}
-
-// Generate/store random device identifier
-if (typeof(Storage) != "undefined") {
-    if (localStorage.getItem("id") == "") localStorage.setItem("id", makeid());
-    deviceid=localStorage.getItem("id")
-}
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
-    window.open("http://www.iceboxapp.net/app-nightly/?la=" + position.coords.latitude + "&lo=" + position.coords.longitude + "&di=" + deviceid ,"_self")
-}
-
-getLocation();
+window.open("http://www.iceboxapp.net/app-nightly/?la=" + position.coords.latitude + "&lo=" + position.coords.longitude + "&di=" + deviceid ,"_self")
 </script>
