@@ -42,6 +42,21 @@ CHECKING FOR EVENTS IN YOUR AREA
 
 <script>
 var x = document.getElementById("demo");
+var deviceid="";
+
+function makeid()
+{    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < 16; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+}
+
+// Generate/store random device identifier
+if (typeof(Storage) != "undefined") {
+    if (localStorage.getItem("id") == "") localStorage.setItem("id", makeid());
+    deviceid=localStorage.getItem("id")
+}
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -53,7 +68,7 @@ function getLocation() {
 
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
-    window.open("http://www.iceboxapp.net/app-nightly/?la=" + position.coords.latitude,"_self")
+    window.open("http://www.iceboxapp.net/app-nightly/?la=" + position.coords.latitude + "&lo=" + position.coords.longitude + "&di=" + $deviceid ,"_self")
 }
 
 getLocation();
